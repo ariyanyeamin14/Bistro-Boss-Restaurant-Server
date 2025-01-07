@@ -45,6 +45,11 @@ async function run() {
         res.send(result)
     })
 
+    app.get('/carts', async(req, res) => {
+      const result = await cartCollection.find().toArray();
+      res.send(result)
+    })
+
 
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
